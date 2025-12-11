@@ -32,6 +32,9 @@ import Demo from './components/Demo/Demo8.vue';
           <li class="nav-item">
             <RouterLink :to="{ 'name': 'Parent' }" class="nav-link">父子組件</RouterLink>
           </li>
+          <li class="nav-item">
+            <RouterLink :to="{ 'name': 'CardList' }" class="nav-link">卡片清單</RouterLink>
+          </li>
         </ul>
       </div>
     </div>

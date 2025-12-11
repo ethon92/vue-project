@@ -11,6 +11,7 @@ import Lifecycle from "@/views/Lifecycle.vue";
 import DemoList from "@/views/DemoList.vue";
 import ToDoList from "@/views/ToDoList.vue";
 import Parent from '@/views/Parent.vue';
+import CardList from '@/views/CardList.vue';
 
 const routes = [
   {
@@ -65,6 +66,11 @@ const routes = [
     path: "/Parent",
     component: Parent,
     name: "Parent"
+  },
+  {
+    path: "/CardList",
+    component: CardList,
+    name: "CardList"
   },
   {
     path: "/:pathMatch(.*)*",

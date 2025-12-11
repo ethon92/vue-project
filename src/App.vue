@@ -29,16 +29,21 @@ import Demo from './components/Demo/Demo8.vue';
           <li class="nav-item">
             <RouterLink :to="{ 'name': 'ToDoList' }" class="nav-link">待辦清單</RouterLink>
           </li>
+          <li class="nav-item">
+            <RouterLink :to="{ 'name': 'Parent' }" class="nav-link">父子組件</RouterLink>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
-  <div>
+  <div class="layout">
     <RouterView></RouterView>
   </div>
-  <hr />
-  <!-- <Demo> -->
-  <!-- </Demo> -->
+
 </template>
 
-<style scoped></style>
+<style scoped>
+  .layout {
+    margin: 5em;
+  }
+</style>

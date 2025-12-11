@@ -7,15 +7,15 @@ const newTodo = ref();
 // 新增待辦
 function addTodo() {
 
-    
-// true false   0 null false / -1 1 '字串' true
-    if(newTodo.value){
+
+    // true false   0 null false / -1 1 '字串' true
+    if (newTodo.value.trim()) {
         todos.value
-        .push({
-            'id': Date.now(),
-            'done': false,
-            'itemName': newTodo.value
-        });
+            .push({
+                'id': Date.now(),
+                'done': false,
+                'itemName': newTodo.value
+            });
     }
 
 }
@@ -32,12 +32,6 @@ const doneCount = computed(() => {
     return todos.value.filter(x => x.done).length;
 })
 
-// const item = {
-//     id: 1,
-//     done: true,
-//     itemName,
-// }
-
 </script>
 
 <template>
@@ -47,25 +41,38 @@ const doneCount = computed(() => {
 
     <table>
         <tbody>
-            <tr v-for="(item, index) in todos" :key="item.id">
-                <td>
-                    <input type="checkbox" v-model="item.done"></input>
-                </td>
-                <td>
-                    <span :class="{ done: item.done }">{{ item.itemName }}</span>
-                </td>
-                <td>
-                    <button @click="removeTodo(item.id)"  class="btn btn-danger">刪除</button>
-                </td>
-            </tr>
+            <TransitionGroup>
+                <tr v-for="(item, index) in todos" :key="item.id">
+                    <td>
+                        <input type="checkbox" v-model="item.done"></input>
+                    </td>
+                    <td>
+                        <span :class="{ done: item.done }">{{ item.itemName }}</span>
+                    </td>
+                    <td>
+                        <button @click="removeTodo(item.id)" class="btn btn-danger">刪除</button>
+                    </td>
+                </tr>
+            </TransitionGroup>
         </tbody>
     </table>
-    <span>共{{ todos.length }}項,已完成{{doneCount}}項</span>
+    <span>共{{ todos.length }}項,已完成{{ doneCount }}項</span>
 
 </template>
 
 <style>
 .done {
     text-decoration: line-through;
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
 }
 </style>

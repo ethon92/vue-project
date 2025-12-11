@@ -1,6 +1,5 @@
 <script setup>
-import { ref } from 'vue';
-const props = defineProps(['pokemon']);
+const props = defineProps({'pokemon': Object});
 
 </script>
 

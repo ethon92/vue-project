@@ -56,9 +56,9 @@ const routes = [
     name: "DemoList",
   },
   {
-    path: "/TodoList",
+    path: "/ToDoList",
     component: ToDoList,
-    name: "TodoList"
+    name: "ToDoList"
   },
   {
     path: "/:pathMatch(.*)*",

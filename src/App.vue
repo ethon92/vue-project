@@ -27,7 +27,7 @@ import Demo from './components/Demo/Demo8.vue';
             <RouterLink :to="{ 'name': 'DemoList' }" class="nav-link">測試清單</RouterLink>
           </li>
           <li class="nav-item">
-            <RouterLink :to="{ 'name': 'TodoList' }" class="nav-link">待辦清單</RouterLink>
+            <RouterLink :to="{ 'name': 'ToDoList' }" class="nav-link">待辦清單</RouterLink>
           </li>
         </ul>
       </div>

@@ -9,6 +9,7 @@ import Children2 from "@/views/Children2.vue";
 import NotFound from "@/views/NotFound.vue";
 import Lifecycle from "@/views/Lifecycle.vue";
 import DemoList from "@/views/DemoList.vue";
+import ToDoList from "@/views/ToDoList.vue";
 
 const routes = [
   {
@@ -53,6 +54,11 @@ const routes = [
     path: "/DemoList",
     component: DemoList,
     name: "DemoList",
+  },
+  {
+    path: "/TodoList",
+    component: ToDoList,
+    name: "TodoList"
   },
   {
     path: "/:pathMatch(.*)*",

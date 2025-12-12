@@ -3,23 +3,15 @@ import studentData from '@/data/student.json'
 import { ref } from 'vue';
 const studentList = ref(studentData);
 const name = ref('');
+// 搜尋姓名
 const searchName = () => {
-    const result = studentData.filter((student) => {
-        return student.name.toLowerCase() == name.value
-    })
-
-    if (result.length == 0) {   
-        studentList.value = studentData;
-    } else if (result) {
-        studentList.value = result;       
-    }
+    studentList.value = studentData.filter(student => student.name.toLowerCase().includes(name.value));
 }
 </script>
 
 <template>
     <div class="search">
         <span>名字搜尋: </span><input type="text" v-model="name" @input="searchName()">
-        {{ name }}
     </div>
     <table class="tb">
         <thead>

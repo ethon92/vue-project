@@ -1,5 +1,6 @@
 <script setup>
 import Child from '@/components/Child.vue';
+import CustomButton from '@/components/CustomButton.vue';
 import SlotButton from '@/components/slotButton.vue';
 function handleChildClick(data) {
     console.log(data)
@@ -12,7 +13,14 @@ function handleChildClick(data) {
 
     <SlotButton>
         <template v-slot:leftIcon></template>
-        切換</SlotButton>
+        切換
+    </SlotButton>
+
+    <hr>
+
+    <CustomButton type="delete"></CustomButton>
+    <CustomButton type="add"></CustomButton>
+
 </template>
 
 <style scoped></style>

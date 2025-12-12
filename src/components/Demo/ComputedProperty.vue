@@ -1,7 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
-import studentData from '../data/student.json';
-
+import studentData from '@/data/student.json';
 const student = ref(studentData[0]);
 
 const fnTotalScore = () => {

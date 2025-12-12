@@ -34,7 +34,7 @@ const searchName = () => {
                 <th>英文</th>
                 <th>數學</th>
             </tr>
-            <tr v-for="student in studentList" class="text-center">
+            <tr v-for="student in studentList" class="text-center" :key="student.id">
                 <td>{{ student.name }}</td>
                 <td>{{ student.chinese }}</td>
                 <td>{{ student.english }}</td>

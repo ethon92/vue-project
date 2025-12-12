@@ -35,6 +35,9 @@ import Demo from './components/Demo/Demo8.vue';
           <li class="nav-item">
             <RouterLink :to="{ 'name': 'CardList' }" class="nav-link">卡片清單</RouterLink>
           </li>
+          <li class="nav-item">
+            <RouterLink :to="{ 'name': 'ScoreTable' }" class="nav-link">學生成績</RouterLink>
+          </li>
         </ul>
       </div>
     </div>

@@ -12,6 +12,7 @@ import DemoList from "@/views/DemoList.vue";
 import ToDoList from "@/views/ToDoList.vue";
 import Parent from '@/views/Parent.vue';
 import CardList from '@/views/CardList.vue';
+import ScoreTable from "@/views/ScoreTable.vue";
 
 const routes = [
   {
@@ -71,6 +72,11 @@ const routes = [
     path: "/CardList",
     component: CardList,
     name: "CardList"
+  },
+  {
+    path: "/ScoreTable",
+    component: ScoreTable,
+    name: "ScoreTable"
   },
   {
     path: "/:pathMatch(.*)*",

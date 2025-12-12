@@ -1,9 +1,6 @@
 <script setup>
-import { computed } from 'vue';
-
+// 定義接收的props
 const props = defineProps({ 'name': String, 'number': Number, 'types': String, 'img': String })
-
-
 
 </script>
 

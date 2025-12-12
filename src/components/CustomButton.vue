@@ -1,7 +1,9 @@
 <script setup>
 import { computed, ref } from 'vue';
-
+// 接收props資料
 const props = defineProps(['type']);
+// 傳送emit事件
+const emit = defineEmits(['customBtnClick'])
 
 // 建立響應式資料
 const buttonDisplay = ref({
@@ -27,6 +29,8 @@ const buttonDisplay2 = computed(() => {
         return { 'name': '新增', 'icon': 'bi bi-plus-lg', 'class': 'btn btn-primary' }
     case 'delete':
         return { 'name': '刪除', 'class': 'btn btn-danger', 'icon': 'bi bi-x-lg' }
+    case 'addOne':
+        return { 'name': '增加一', 'class': 'btn btn-success', 'icon': 'bi bi-plus-lg' }
 
 }
 })
@@ -34,7 +38,7 @@ const buttonDisplay2 = computed(() => {
 </script>
 
 <template>
-    <button :class="buttonDisplay2.class"><i :class="buttonDisplay2.icon"></i>{{ buttonDisplay2.name }}</button>
+    <button :class="buttonDisplay2.class" @click="emit('customBtnClick')"><i :class="buttonDisplay2.icon"></i>{{ buttonDisplay2.name }}</button>
 </template>
 
 <style scoped></style>

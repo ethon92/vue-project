@@ -30,29 +30,29 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
+      - name: Setup npm
+        uses: npm/action-setup@v4
         with:
-          version: 9
+          version: 11
 
-      - name: Get pnpm store directory
+      - name: Get npm store directory
         shell: bash
         run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+          echo "STORE_PATH=$(npm store path --silent)" >> $GITHUB_ENV
 
-      - name: Setup pnpm cache
+      - name: Setup npm cache
         uses: actions/cache@v4
         with:
           path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-npm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.os }}-pnpm-store-
+            ${{ runner.os }}-npm-store-
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: npm install --frozen-lockfile
 
       - name: Build
-        run: pnpm build
+        run: npm build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
